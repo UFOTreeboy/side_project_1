@@ -14,29 +14,22 @@ def weather_data():
         #print(response.text)測試有沒有抓到資料
         data = json.loads(response.text)
         for location_data in data["records"]["location"]:
-            locations = location_data["locationName"]
-
             weather_elements = location_data["weatherElement"]
-            start_time = weather_elements[0]["time"][0]["startTime"]
-            end_time = weather_elements[0]["time"][0]["endTime"]
-            weather_state = weather_elements[0]["time"][0]["parameter"]["parameterName"]
-            rain_prob = weather_elements[1]["time"][0]["parameter"]["parameterName"]
-            min_tem = weather_elements[2]["time"][0]["parameter"]["parameterName"]
-            comfort = weather_elements[3]["time"][0]["parameter"]["parameterName"]
-            max_tem = weather_elements[4]["time"][0]["parameter"]["parameterName"]
+
+        weather_info = {
+            "locations" : location_data["locationName"],
+            "start_time" : weather_elements[0]["time"][0]["startTime"],
+            "end_time" : weather_elements[0]["time"][0]["endTime"],
+            "weather_state" : weather_elements[0]["time"][0]["parameter"]["parameterName"],
+            "rain_prob" : weather_elements[1]["time"][0]["parameter"]["parameterName"],
+            "min_tem" : weather_elements[2]["time"][0]["parameter"]["parameterName"],
+            "comfort" : weather_elements[3]["time"][0]["parameter"]["parameterName"],
+            "max_tem" : weather_elements[4]["time"][0]["parameter"]["parameterName"],
+                }
         
-            print(f"Location: {locations}")
-            print(start_time)
-            print(end_time)
-            print(weather_state)
-            print(rain_prob)
-            print(min_tem)
-            print(comfort)
-            print(max_tem)
-            
-        
+        return weather_info
+    
     else:
         print("No data!")
-        
-  
-weather_data()
+        return {}
+   

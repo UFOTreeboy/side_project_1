@@ -13,5 +13,7 @@ def fullscreen():
         control_scale=True,
         max_bounds=True
     )
+
+    
     return m.get_root().render()
 
