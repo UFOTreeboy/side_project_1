@@ -4,3 +4,4 @@ folium == 0.15.0
 numpy  == 1.26.2
 requests == 2.31.0
 Flask-Caching  == 2.1.0
+redis == 5.0.1
