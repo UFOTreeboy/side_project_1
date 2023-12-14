@@ -25,8 +25,7 @@ def fullscreen():
 
     custom_tiles = {
     "預設地圖": "OpenStreetMap",
-    "深色地圖": "cartodb positron",
-    "黑暗地圖": "cartodbdark_matter"
+    "素色地圖": "cartodb positron",
     }
 
     for mapname , tiles in custom_tiles.items():
