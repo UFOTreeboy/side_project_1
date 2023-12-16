@@ -8,7 +8,7 @@ def create_app():
 
     from backend.website.website import website
     from backend.map.map_blueprint import map_blueprint
-    app.register_blueprint(website,url_prefix='/')
+    app.register_blueprint(website,url_prefix='/website')
     app.register_blueprint(map_blueprint,url_prefix='/map')
     
 
