@@ -7,7 +7,7 @@
 </head>
 <body>
     <div>
-        <img src="{{ url_for('plot_png') }}" alt="Catch Chart">
+        <img src="data:image/png;base64, {{ plot_url }}">
     </div>
 </body>
 </html>
