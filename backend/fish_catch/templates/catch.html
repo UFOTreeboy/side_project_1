@@ -4,8 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>catch</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
-    <img src="data:image/png;base64,{{ img_base64 }}" alt="Fish Harvest Chart">
+    <h2>Fish Data</h2>
+
+    <table>
+        <tr>
+            <th>(編號)捕撈方式</th>
+            <th>縣市別</th>
+            <th>年度(民國)</th>
+            <th>捕撈量(噸)</th>
+        </tr>
+        {% for item in fish_data %}
+            <tr>
+                <td>{{ item.field001 }}</td>
+                <td>{{ item.field002 }}</td>
+                <td>{{ item.field003 }}</td>
+                <td>{{ item.field004 }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
