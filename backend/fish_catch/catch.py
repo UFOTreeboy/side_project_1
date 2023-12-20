@@ -3,7 +3,10 @@ import requests
 
 
 fish_catch = Blueprint('catch', __name__,
-                template_folder= 'templates')
+                static_url_path='fish_catch/static',
+                template_folder= 'templates',
+                static_folder='../fish_catch/static'
+                                              )
 
 def get_data():
     url = "https://data.moa.gov.tw/Service/OpenData/FaRss.aspx?key=073&$top=1000&$skip=0&UnitId=C71"
