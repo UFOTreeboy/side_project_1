@@ -11,6 +11,6 @@ def create_app():
     from backend.fish_catch.catch import fish_catch
     app.register_blueprint(website,url_prefix='/website')
     app.register_blueprint(map_blueprint,url_prefix='/map')
-    app.register_blueprint(fish_catch,url_prefix='/catch')
+    app.register_blueprint(fish_catch,url_prefix='/catch', static_folder='backend/fish_catch/static')
 
     return app

@@ -3,9 +3,9 @@ import requests
 
 
 fish_catch = Blueprint('catch', __name__,
-                static_url_path='fish_catch/static',
+                static_url_path='/catch/static',
                 template_folder= 'templates',
-                static_folder='../fish_catch/static'
+                static_folder='static'
                                               )
 
 def get_data():
