@@ -24,7 +24,6 @@ def fullscreen():
     )
 
     custom_tiles = {
-    "素色地圖": "cartodb positron",     
     "預設地圖": "OpenStreetMap",
     }
 
