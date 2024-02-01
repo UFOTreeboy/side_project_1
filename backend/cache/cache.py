@@ -8,7 +8,6 @@ configini.read('config.ini', encoding='utf-8')
 
 cache = Cache(config = {
       'CACHE_TYPE': 'redis',
-      'CACHE_REDIS_HOST': 'redis-11312.c1.asia-northeast1-1.gce.cloud.redislabs.com',
-      'CACHE_REDIS_PORT': 11312,
-      'CACHE_REDIS_PASSWORD':'EhUEQfWBAnaMHOjPbFbDFqZja3yfx3rL'
+      'CACHE_REDIS_HOST': 'redis://red-cmto527109ks73adonlg',
+      'CACHE_REDIS_PORT': 6379,
 })
