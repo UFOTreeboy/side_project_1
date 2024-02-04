@@ -1,13 +1,12 @@
 from flask_caching import Cache
 import os
-#import configparser
+from dotenv import load_dotenv
 
-'''
-configini = configparser.ConfigParser()
-configini.read('config.ini', encoding='utf-8')
-'''
+load_dotenv()
 
 cache = Cache(config = {
+    
       'CACHE_TYPE': 'redis',
       'CACHE_REDIS_URL':os.environ.get('CACHE_REDIS_URL')
+      
 })
