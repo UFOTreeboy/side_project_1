@@ -4,7 +4,8 @@ from ..cache.cache import cache
 import folium
 
 map_blueprint = Blueprint('map',__name__,
-                template_folder= 'templates')
+                template_folder= 'templates',
+                static_folder='map/static')
 
 @map_blueprint.route("/")
 @cache.cached(timeout=50)
@@ -77,9 +78,10 @@ def fullscreen():
     second_class_layer.add_to(map_blueprint)
     other_class_layer.add_to(map_blueprint)
 
-    map_blueprint.get_root().width = "750px"
-    map_blueprint.get_root().height = "550px"
-
+    '''
+    map_blueprint.get_root().width = "800px"
+    map_blueprint.get_root().height = "750px"
+    '''
     folium.LayerControl(collapsed=False).add_to(map_blueprint)
 
     iframe = map_blueprint.get_root()._repr_html_()
