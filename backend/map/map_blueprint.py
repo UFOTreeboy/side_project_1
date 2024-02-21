@@ -5,7 +5,7 @@ import folium
 
 map_blueprint = Blueprint('map',__name__,
                 template_folder= 'templates',
-                static_folder='map/static')
+                static_folder='static')
 
 @map_blueprint.route("/")
 @cache.cached(timeout=50)
