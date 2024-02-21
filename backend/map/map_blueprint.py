@@ -7,7 +7,7 @@ map_blueprint = Blueprint('map',__name__,
                 template_folder= 'templates',
                 static_folder='static')
 
-@map_blueprint.route("/")
+@map_blueprint.route("/",methods=['GET'])
 @cache.cached(timeout=50)
 def fullscreen():
     database_name = 'treeboy'

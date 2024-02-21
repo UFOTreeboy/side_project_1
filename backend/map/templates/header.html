@@ -1,7 +1,7 @@
 <header> 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">首頁</a>
+      <a class="navbar-brand" href="/">首頁</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -12,9 +12,9 @@
               關於漁業
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">台灣漁業</a></li>
-              <li><a class="dropdown-item" href="{{ url_for('aboutfishery.about_html') }}">漁業法規</a></li>
-              <li><a class="dropdown-item" href="#">漁業困境</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('aboutfishery.about_html') }}">台灣漁業</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('aboutfishery.law_html') }}">漁業法規</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('aboutfishery.dilemma_html') }}">漁業困境</a></li>
             </ul>
           </li>
         </ul>
@@ -24,7 +24,7 @@
               漁業資料
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">台灣漁港地圖</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('map.fullscreen') }}">台灣漁港地圖</a></li>
               <li><a class="dropdown-item" href="#">歷年漁獲量</a></li>
               <li><a class="dropdown-item" href="#">歷年漁業從業人數</a></li>
             </ul>
