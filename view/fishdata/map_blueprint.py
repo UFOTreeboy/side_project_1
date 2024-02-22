@@ -1,6 +1,6 @@
 from flask import Flask, render_template, Blueprint
-from ..database.database import connect_to_mongodb
-from ..cache.cache import cache
+from database.database import connect_to_mongodb
+from cache.cache import cache
 import folium
 
 map_blueprint = Blueprint('map',__name__,

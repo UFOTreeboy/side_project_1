@@ -1,8 +1,7 @@
 from flask import  render_template, Blueprint
 
 homeday = Blueprint('homeday',__name__,
-                template_folder= 'templates',
-                            )
+                    template_folder= 'templates',)
 
 @homeday.route("/",methods=['GET'])
 def index():
