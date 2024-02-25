@@ -11,3 +11,12 @@ footer {
     width:100%;
     background: aliceblue;
  }
+
+ .c-item{
+  height: 480px;
+ }
+ .c-img{
+  height: 100%;
+  object-fit: cover;
+  filter:brightness(0.6);
+ }
