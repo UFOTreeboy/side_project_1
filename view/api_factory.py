@@ -4,6 +4,10 @@ from flask import Flask
 def create_app():
     app = Flask(__name__)
 
+    from flask_wtf.csrf import CSRFProtect
+    csrf = CSRFProtect()
+    csrf.init_app(app)
+
     from cache.cache import cache
     cache.init_app(app)
 
