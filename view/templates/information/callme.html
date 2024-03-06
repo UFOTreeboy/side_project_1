@@ -3,21 +3,30 @@
 
 {% block body %}
 <h1>通知我</h1>
-<form method="post">
-    <div class="form-group">
-        <label for="name">Name:</label>
-        <input id="name" class="form-control" type="text" name="name" />
-    </div>
-    <div class="form-group">
-        <label for="profession">Profession:</label>
-        <input id="profession" class="form-control" type="text" name="profession" />
-    </div>
-    <div class="form-group">
-        <label for="text">Text:</label>
-        <textarea id="text" class="form-control" name="text"></textarea>
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+    {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+{% endwith %}
+<form method="POST">
+    {{form.hidden_tag()}}
+    <div>
+    {{form.profession.label(class='form-label')}} 
+        </div>
+    {{form.profession(class='form-control sub-con')}} 
+    <br>
+    <div>
+    {{form.content.label(class='form-label')}}
+        </div>
+    {{form.content(class='form-textarea')}}
+    <br>
+    <div>
+    {{form.submit(class='sub-submit')}}
+        </div>
+
 </form>
 {% endblock %}

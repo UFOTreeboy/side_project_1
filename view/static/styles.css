@@ -20,3 +20,30 @@ footer {
   object-fit: cover;
   filter:brightness(0.6);
  }
+
+ .form-textarea {
+  width: 75%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+.sub-con{
+  width:75% ;
+
+}
+
+
+.sub-submit{
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+}
