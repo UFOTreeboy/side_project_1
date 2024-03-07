@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField,SelectField,SubmitField,TextAreaField
-from wtforms.validators import DataRequired,Optional
+from wtforms import SelectField,SubmitField,TextAreaField,HiddenField
+from wtforms.validators import DataRequired
 
 class MyForm(FlaskForm):
     profession = SelectField('您的職業類別',choices=[('ff01','學生'),

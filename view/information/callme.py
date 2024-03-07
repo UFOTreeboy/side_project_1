@@ -2,6 +2,7 @@ from flask import  render_template, Blueprint, request, redirect, url_for, flash
 from database.database import connect_to_mongodb
 from database.form import MyForm
 
+
 callme = Blueprint('callme',__name__,
                     template_folder= 'templates',)
 

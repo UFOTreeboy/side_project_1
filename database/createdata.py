@@ -10,6 +10,5 @@ def create_collection():
 
     if collection_name not in db.database.list_collection_names():
         collection = db.database.create_collection(collection_name)
-        collection.create_index([('name')], unique=True)
         collection.create_index([('profession')])
         collection.create_index([('text')])

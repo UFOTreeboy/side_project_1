@@ -1,5 +1,5 @@
 from flask import Flask
-
+import os
 
 def create_app():
     app = Flask(__name__)
@@ -7,7 +7,7 @@ def create_app():
     from flask_wtf.csrf import CSRFProtect
     csrf = CSRFProtect()
     csrf.init_app(app)
-    app.config['SECRET_KEY'] = "e27d3624b1d78f85826bd4ca05ef6c91"
+    app.config['SECRET_KEY'] = os.environ.get('HIDDEN_SECRET_KEY')
 
     from cache.cache import cache
     cache.init_app(app)
