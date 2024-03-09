@@ -2,16 +2,17 @@
 
 
 {% block body %}
-<h1>通知我</h1>
 {% with messages = get_flashed_messages(with_categories=true) %}
 {% if messages %}
     {% for category, message in messages %}
-        <div class="alert alert-{{ category }}">
+        <div class="alert alert-{{ category }}"  id="div_flash">
             {{ message }}
+        <input type="button" value=&#10006 onclick="removeFlash()" style="float: right">
         </div>
     {% endfor %}
 {% endif %}
 {% endwith %}
+
 <form method="POST">
     {{form.hidden_tag()}}
     <div>

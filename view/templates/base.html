@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <title>臺灣漁業資訊</title>
 </head>
+<script>
+    function removeFlash() {
+        const element = document.getElementById('div_flash');
+        element.remove();
+    }
+</script>
 <body>
     {% include 'header.html' %}
     {% block body %}
