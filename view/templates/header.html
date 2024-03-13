@@ -25,8 +25,8 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
               <li><a class="dropdown-item" href="{{ url_for('map.fullscreen') }}">台灣漁港地圖</a></li>
-              <li><a class="dropdown-item" href="#">歷年漁獲量</a></li>
-              <li><a class="dropdown-item" href="#">歷年漁業從業人數</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('fishy.hello') }}">歷年漁獲量</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('fishy_worker.worker') }}">歷年漁業從業人數</a></li>
             </ul>
           </li>
         </ul>
