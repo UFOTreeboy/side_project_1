@@ -3,7 +3,7 @@ from database.database import connect_to_mongodb
 import base64
 from io import BytesIO
 from matplotlib.figure import Figure
-import seaborn as sns
+from matplotlib import pyplot as plt
 import pandas as pd
 
 
@@ -17,16 +17,17 @@ cl = pd.DataFrame(list(data_collection.find()))
 
 @fishy_worker.route("/",methods=['GET'])
 def worker():
-    
-
-
-
-
-
-    fig = Figure(figsize=(10, 5.2))
-    ax = fig.subplots()
-    x_sorted = cl['date']
-    y_sorted = cl['value']
+    fig = Figure()
+    fig, ax = plt.subplots(figsize=(10,5.2), facecolor='lightskyblue',
+                       layout='constrained')
+    ax.set_title('unit(tons)', loc='left', fontstyle='oblique', fontsize='medium')
+    plt.ticklabel_format(style='plain', axis='y')
+    plt.grid()
+    plt.subplots_adjust(left=0.03, right=0.86)
+    fig.autofmt_xdate()
+    x_sorted = cl.sort_values('date', ascending=True)['date']
+    value_cl_sorted = cl.sort_values('date')
+    y_sorted = value_cl_sorted['value']
     ax.plot(x_sorted, y_sorted)
     buf = BytesIO()
     fig.savefig(buf, format="png")
