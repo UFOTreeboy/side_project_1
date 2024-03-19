@@ -6,7 +6,7 @@ from database.form import MyForm
 callme = Blueprint('callme',__name__,
                     template_folder= 'templates',)
 
-db = connect_to_mongodb('treeboy', 'new_users')
+db = connect_to_mongodb('new_users')
 
 @callme.route("/callme",methods=['GET','POST'])
 def call_me():

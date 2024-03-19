@@ -11,7 +11,7 @@ fishy_worker = Blueprint('fishy_worker',__name__,
                 template_folder= 'templates',
                 static_folder='static')
 
-data_collection = connect_to_mongodb('treeboy', 'fisky_work_ocean')
+data_collection = connect_to_mongodb('fisky_work_ocean')
 cl = pd.DataFrame(list(data_collection.find()))
 
 

@@ -10,10 +10,9 @@ map_blueprint = Blueprint('map',__name__,
 @map_blueprint.route("/",methods=['GET'])
 @cache.cached(timeout=50)
 def fullscreen():
-    database_name = 'treeboy'
     collection_name = 'newport'
 
-    data_collection = connect_to_mongodb(database_name, collection_name)
+    data_collection = connect_to_mongodb(collection_name)
     data = data_collection.find()
 
     map_blueprint = folium.Map(
