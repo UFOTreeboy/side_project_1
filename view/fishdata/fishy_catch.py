@@ -1,17 +1,32 @@
 from flask import  render_template, Blueprint
+from database.database import connect_to_mongodb
 import base64
 from io import BytesIO
 from matplotlib.figure import Figure
+from matplotlib import pyplot as plt
+import pandas as pd
+
 
 fishy_catch = Blueprint('fishy',__name__,
                 template_folder= 'templates',
                 static_folder='static')
 
+data_collection = connect_to_mongodb('fisky_work_ocean')
+cl = pd.DataFrame(list(data_collection.find()))
+
 @fishy_catch.route("/",methods=['GET'])
 def hello():
     fig = Figure()
-    ax = fig.subplots()
-    ax.plot([1, 2])
+    fig, ax = plt.subplots(figsize=(10,5.2), facecolor='lightskyblue',
+                       layout='constrained')
+    ax.set_title('unit(tons)', loc='left', fontstyle='oblique', fontsize='medium')
+    plt.ticklabel_format(style='plain', axis='y')
+    plt.grid()
+    fig.autofmt_xdate()
+    x_sorted = cl.sort_values('date', ascending=True)['date']
+    value_cl_sorted = cl.sort_values('date')
+    y_sorted = value_cl_sorted['value']
+    ax.plot(x_sorted, y_sorted)
     buf = BytesIO()
     fig.savefig(buf, format="png")
     data = base64.b64encode(buf.getbuffer()).decode("ascii")
