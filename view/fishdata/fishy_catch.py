@@ -15,7 +15,7 @@ data_collection = connect_to_mongodb('fisky_work_ocean')
 cl = pd.DataFrame(list(data_collection.find()))
 
 @fishy_catch.route("/",methods=['GET'])
-def hello():
+def hello()->plt:
     fig = Figure()
     fig, ax = plt.subplots(figsize=(10,5.2), facecolor='lightskyblue',
                        layout='constrained')
