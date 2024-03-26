@@ -18,7 +18,6 @@ def create_app():
     from view.home.home import homeday
     from view.fishdata.map_blueprint import map_blueprint
     from view.fishdata.fishy_catch import fishy_catch
-    from view.fishdata.fishy_worker import fishy_worker
     from view.about.about import aboutfishery
     from view.other.other import other
     from view.information.callme import callme
@@ -26,7 +25,6 @@ def create_app():
     app.register_blueprint(homeday)
     app.register_blueprint(map_blueprint,url_prefix='/map_blueprint')
     app.register_blueprint(fishy_catch,url_prefix='/fishy_catch')
-    app.register_blueprint(fishy_worker,url_prefix='/fishy_worker')
     app.register_blueprint(aboutfishery,url_prefix='/about')
     app.register_blueprint(other,url_prefix='/other')
     app.register_blueprint(callme,url_prefix='/callme')

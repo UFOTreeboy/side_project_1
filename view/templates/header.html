@@ -12,8 +12,7 @@
               關於漁業
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-              <li><a class="dropdown-item" href="{{ url_for('aboutfishery.about_html') }}">台灣漁業</a></li>
-              <li><a class="dropdown-item" href="{{ url_for('aboutfishery.law_html') }}">漁業法規</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('aboutfishery.about_html') }}">台灣漁業總覽</a></li>
               <li><a class="dropdown-item" href="{{ url_for('aboutfishery.dilemma_html') }}">漁業困境</a></li>
             </ul>
           </li>
@@ -26,7 +25,6 @@
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
               <li><a class="dropdown-item" href="{{ url_for('map.fullscreen') }}">台灣漁港地圖</a></li>
               <li><a class="dropdown-item" href="{{ url_for('fishy.hello') }}">歷年漁獲量</a></li>
-              <li><a class="dropdown-item" href="{{ url_for('fishy_worker.worker') }}">歷年漁業從業人數</a></li>
             </ul>
           </li>
         </ul>
