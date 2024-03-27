@@ -7,6 +7,8 @@ body{
     display:flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family:fantasy;
+    background:hsla(180, 17%, 87%, 0.357);
 }
 
 footer {
@@ -68,7 +70,26 @@ footer {
   }
 }
 
-.textBox {
+@font-face {
+  font-family: 'cwTeXKai';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/cwtexkai/v3/cwTeXKai-zhonly.eot);
+  src: url(//fonts.gstatic.com/ea/cwtexkai/v3/cwTeXKai-zhonly.eot?#iefix) format('embedded-opentype'),
+       url(//fonts.gstatic.com/ea/cwtexkai/v3/cwTeXKai-zhonly.woff2) format('woff2'),
+       url(//fonts.gstatic.com/ea/cwtexkai/v3/cwTeXKai-zhonly.woff) format('woff'),
+       url(//fonts.gstatic.com/ea/cwtexkai/v3/cwTeXKai-zhonly.ttf) format('truetype');
+}
 
+.textBox {
   line-height: 100px;
+}
+
+.text-img{
+  font-size: 25px;
+  font-family: cwTeXKai;
+}
+
+.word-img{
+  text-align:center;
 }
