@@ -1,8 +1,3 @@
-h1 {
-    color: rgb(255, 0, 0);
-    text-align: center;
-  }
-
 body{
     display:flex;
     flex-direction: column;
@@ -92,4 +87,16 @@ footer {
 
 .word-img{
   text-align:center;
+}
+
+h1 {
+  color: #000000;
+  text-align: center;
+  font-family: cwTeXKai;
+  font-size: 35px;
+}
+
+.wrapper {
+  width: 1000px;
+  margin: 0 auto;
 }

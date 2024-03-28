@@ -77,10 +77,10 @@ def fullscreen():
     second_class_layer.add_to(map_blueprint)
     other_class_layer.add_to(map_blueprint)
 
-    '''
-    map_blueprint.get_root().width = "800px"
-    map_blueprint.get_root().height = "750px"
-    '''
+    
+    #map_blueprint.get_root().width = "800px"
+    #map_blueprint.get_root().height = "750px"
+    
     folium.LayerControl(collapsed=False).add_to(map_blueprint)
 
     iframe = map_blueprint.get_root()._repr_html_()
