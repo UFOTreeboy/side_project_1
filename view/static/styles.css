@@ -3,7 +3,7 @@ body{
     flex-direction: column;
     min-height: 100vh;
     font-family:fantasy;
-    background:hsla(180, 17%, 87%, 0.357);
+    background:hsl(0, 0%, 100%);
 }
 
 footer {

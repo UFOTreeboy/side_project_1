@@ -12,7 +12,7 @@
     {% endfor %}
 {% endif %}
 {% endwith %}
-
+<article class="blog-post wrapper">
 <form method="POST">
     {{form.hidden_tag()}}
     <div>
@@ -30,4 +30,5 @@
         </div>
 
 </form>
+</article>
 {% endblock %}
